@@ -1,10 +1,9 @@
-arr = [2,2,2,2,2,2,2]
+arr = [4,3,2,2,4,3,3]
 
 def removeDuplicates(arr):
-    new = []
-    for i in arr:
-        if i not in new:
-            new.append(i)
-    return new
+    visited = {}
+    for element in arr:
+        visited[element] = True
+    return list(visited.keys())
 
 print(removeDuplicates(arr))
