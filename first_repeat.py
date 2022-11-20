@@ -1,6 +1,6 @@
 # diberikan string str, buat function yang mengembalikan karakter pertama yang diulang. jika tidak ditemukan maka function tersebut mengembalikan nilai null
 
-str = "kelelawar"
+str = "kuda"
 
 def find_doublechar(str):
     visited = {}
@@ -9,7 +9,7 @@ def find_doublechar(str):
             return i
         else:
             visited[i] = True
-    return null
+    return '\0'
 
 result = find_doublechar(str)
 
