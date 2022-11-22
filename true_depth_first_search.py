@@ -1,58 +1,38 @@
 # Time complexity: O(n)
 # Space complexity: O(h)
+from binarytree import Node
 
-class Tree:
-  def __init__(self, data, left = None, right = None):
-    self.data = data
-    self.left = left
-    self.right = right
+root = Node(4)
+root.left = Node(6)
+root.right = Node(7)
+root.left.left = Node(3)
+root.left.right = Node(5)
+root.right.left = Node(1)
+root.right.right = Node(2)
 
-  def insert(self, data):
-    if self.data is None:
-      self.data = data
-    else:
-      if data < self.data:
-        if self.right is None:
-          self.right = Tree(data)
-        else:
-          self.right.insert(data)
-      elif data > self.data:
-        if self.left is None:
-          self.left = Tree(data)
-        else:
-          self.left.insert(data)
+# def dfsPreorder(root):
+#   if root is None:
+#     return
+#   print(root.value)
+#   dfsPreorder(root.left)
+#   dfsPreorder(root.right)
 
-def dfsPreorder(root):
-  if root is None:
-    return
-  print(root.data)
-  dfsPreorder(root.left)
-  dfsPreorder(root.right)
 
-def dfsInorder(root):
-  if root is None:
-    return
-  dfsInorder(root.left)
-  print(root.data)
-  dfsInorder(root.right)
+# def dfsInorder(root):
+#   if root is None:
+#     return
+#   dfsInorder(root.left)
+#   print(root.value)
+#   dfsInorder(root.right)
+  
+# dfsInorder(root)
 
 def dfsPostorder(root):
   if root is None:
     return
   dfsPostorder(root.left)
   dfsPostorder(root.right)
-  print(root.data)
-  
+  print(root.value)
 
-
-if __name__ == "__main__":
-  root = Tree(4)
-  root.insert(6)
-  root.insert(3)
-  root.insert(5)
-  root.insert(7)
-  root.insert(1)
-  root.insert(2)
-  
-  dfsPreorder(root)
+dfsPostorder(root)
           
